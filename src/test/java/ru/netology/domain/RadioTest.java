@@ -5,38 +5,38 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class RadioTest {
-    Radio radio = new Radio();
+    Radio radio = new Radio(9);
 
     @Test
     public void shouldLouderVolume() {
-        int currentVolume = 10;
-        radio.setCurrentVolume(currentVolume);
-        radio.louderVolume();
-        assertEquals(10, radio.getCurrentVolume());
-    }
-
-    @Test
-    public void louderVolume1() {
-        int currentVolume = 7;
-        radio.setCurrentVolume(currentVolume);
-        radio.louderVolume();
-        assertEquals(8, radio.getCurrentVolume());
-    }
-
-    @Test
-    public void louderVolumeMax() {
-        int currentVolume = 11;
+        int currentVolume = 101;
         radio.setCurrentVolume(currentVolume);
         radio.louderVolume();
         assertEquals(1, radio.getCurrentVolume());
     }
 
     @Test
+    public void louderVolume1() {
+        int currentVolume = 77;
+        radio.setCurrentVolume(currentVolume);
+        radio.louderVolume();
+        assertEquals(78, radio.getCurrentVolume());
+    }
+
+    @Test
+    public void louderVolumeMax() {
+        int currentVolume = 100;
+        radio.setCurrentVolume(currentVolume);
+        radio.louderVolume();
+        assertEquals(100, radio.getCurrentVolume());
+    }
+
+    @Test
     public void hushVolume() {
-        int currentVolume = 8;
+        int currentVolume = 88;
         radio.setCurrentVolume(currentVolume);
         radio.hushVolume();
-        assertEquals(7, radio.getCurrentVolume());
+        assertEquals(87, radio.getCurrentVolume());
     }
 
     @Test
@@ -80,7 +80,7 @@ public class RadioTest {
     }
 
     @Test
-    public void PrevChannelEnd() {
+    public void prevChannelEnd() {
         int currentChannel = 0;
         radio.setCurrentChannel(currentChannel);
         radio.prevRadioChannel();
